@@ -16,7 +16,7 @@
 </header>
 <nav class="header">
       <ul>
-        <li><span></span><a href="#">Konoha</a></li>
+        <li><span></span><a href="{{url('/test')}}">Konoha</a></li>
         <li><span></span><a href="#">Senoga</a></li>
         <li><span></span><a href="#">Kumoga</a></li>
         <li><span></span><a href="#">Iwaga</a></li>

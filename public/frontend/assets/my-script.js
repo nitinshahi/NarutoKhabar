@@ -17,10 +17,10 @@ let currentVideoIndex = 0;
 function changeVideo() {
   const videoElement = document.getElementById("video-slider");
   const videoLinks = [
-    "frontend/src/videos/konoha/2.mp4",
-    "frontend/src/videos/konoha/3.mp4",
-    "frontend/src/videos/konoha/4.mp4",
-    "frontend/src/videos/konoha/1.mp4",
+    "./frontend/src/videos/konoha/2.mp4",
+    "./frontend/src/videos/konoha/3.mp4",
+    "./frontend/src/videos/konoha/4.mp4",
+    "./frontend/src/videos/konoha/1.mp4",
   ];
 
   videoElement.src = videoLinks[currentVideoIndex];
@@ -44,4 +44,39 @@ function changeVideo() {
   });
 }
 
-setInterval(changeVideo, 5000);
+setInterval(changeVideo, 5000)
+
+// For News Body
+
+document.addEventListener("DOMContentLoaded", function () {
+  const articles = document.querySelectorAll(".artical_container article");
+
+  articles.forEach((article) => {
+    const newsBody = article.querySelector(".news-body");
+
+    article.addEventListener("click", function () {
+      // Toggle the visibility of the clicked article's news body
+      newsBody.classList.toggle("hidden");
+
+      // Close other articles if they are open
+      articles.forEach((otherArticle) => {
+        if (otherArticle !== article) {
+          otherArticle.querySelector(".news-body").classList.add("hidden");
+        }
+      });
+    });
+  });
+
+  // Close the active article when clicking outside of any article
+  document.addEventListener("click", function (event) {
+    const isClickInsideArticle = articles.some((article) =>
+      article.contains(event.target)
+    );
+
+    if (!isClickInsideArticle) {
+      articles.forEach((article) => {
+        article.querySelector(".news-body").classList.add("hidden");
+      });
+    }
+  });
+});

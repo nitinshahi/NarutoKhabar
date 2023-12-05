@@ -130,6 +130,7 @@ nav {
       article {
         width: 30rem;
         position: relative;
+
         .artical-image {
           height: 35rem;
           width: 100%;
@@ -143,7 +144,7 @@ nav {
             transition: all 0.3s ease-in-out;
           }
           :hover {
-            transform: scale(1.2);
+            transform: scale(1.05);
           }
         }
         .news-title {
@@ -155,16 +156,29 @@ nav {
           white-space: nowrap;
           text-decoration: none;
         }
-        .hidden {
-          // display: none;
-        }
-        .overlay {
-          position: absolute;
-          top: 50%;
-          left: 50%;
 
-          p {
-          }
+        .news-body {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: white;
+          z-index: 999;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 0rem 2rem; /* Add padding for better readability */
+          box-sizing: border-box;
+          font-size: 1.6rem;
+          font-family: "Dosis", sans-serif;
+          border-radius: 5px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          overflow: auto;
+        }
+        .hidden {
+          display: none;
         }
         .date {
           font-size: 1.3rem;
@@ -175,9 +189,10 @@ nav {
         a {
           font-size: 1.3rem;
           font-family: "Dosis", sans-serif;
+          color: blue;
         }
       }
-      :hover {
+      :hover{
         cursor: pointer;
       }
     }
@@ -386,7 +401,7 @@ footer {
 //contact us
 
 .contact-us {
-  background-image: url("./src/background/map.jpg");
+  background-image: url("../src/background/map.jpg");
   height: 79.2vh;
   display: flex;
   flex-direction: column;
@@ -601,9 +616,6 @@ footer {
           object-fit: cover;
         }
 
-<<<<<<< HEAD:style.scss
-    
-=======
         &:hover {
           opacity: 1;
           transition: 0.2s;
@@ -612,7 +624,6 @@ footer {
           border-radius: 10px;
           margin: 0rem 1rem;
         }
->>>>>>> 1314027ea3438f02f2f7b15712cf655d597f425f:frontend/assets/style.scss
 
         &.active {
           opacity: 1;

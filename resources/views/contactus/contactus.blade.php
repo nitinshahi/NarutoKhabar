@@ -43,10 +43,11 @@
             placeholder="Place Your Message Here"
           ></textarea>
         </div>
-      </form>
-
-      <div class="button-wrap">
+        <div class="button-wrap">
         <button class="button">Submit</button>
       </div>
     </div>
+      </form>
+
+      
 @endsection

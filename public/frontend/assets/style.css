@@ -140,7 +140,7 @@ nav ul :hover span {
   transition: all 0.3s ease-in-out;
 }
 .general_news .news_wrapper .artical_container article .artical-image :hover {
-  transform: scale(1.2);
+  transform: scale(1.05);
 }
 .general_news .news_wrapper .artical_container article .news-title {
   font-size: 1.6rem;
@@ -151,10 +151,28 @@ nav ul :hover span {
   white-space: nowrap;
   text-decoration: none;
 }
-.general_news .news_wrapper .artical_container article .overlay {
+.general_news .news_wrapper .artical_container article .news-body {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 2rem; /* Add padding for better readability */
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  font-family: "Dosis", sans-serif;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: auto;
+}
+.general_news .news_wrapper .artical_container article .hidden {
+  display: none;
 }
 .general_news .news_wrapper .artical_container article .date {
   font-size: 1.3rem;
@@ -165,6 +183,7 @@ nav ul :hover span {
 .general_news .news_wrapper .artical_container article a {
   font-size: 1.3rem;
   font-family: "Dosis", sans-serif;
+  color: blue;
 }
 .general_news .news_wrapper .artical_container :hover {
   cursor: pointer;
@@ -546,13 +565,8 @@ footer .footer-option a {
 }
 .project-video section .navigation li:hover {
   opacity: 1;
-<<<<<<< HEAD:style.css
-  transition: 0.5s;
-  transform: scale(0.95);
-=======
   transition: 0.2s;
   transform: scale(1.1);
->>>>>>> 1314027ea3438f02f2f7b15712cf655d597f425f:frontend/assets/style.css
   overflow: hidden;
   border-radius: 10px;
   margin: 0rem 1rem;
