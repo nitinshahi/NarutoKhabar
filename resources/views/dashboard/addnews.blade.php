@@ -10,12 +10,21 @@
 </head>
 
 <body>
+  
+  
   <h2>Add News</h2>
-  @if($errors->any())
-  @foreach($errors->all() as $error)
-  {{$error}}
-  @endforeach
+  @if(Session::has('flash_back'))
+    <p>{{ Session::get('flash_back') }}</p>
   @endif
+
+  @if($errors->any())
+    <ul>
+    @foreach($errors->all() as $error)
+      <li>{{$error}}</li>
+    @endforeach
+    </ul>
+  @endif
+
   <div class="page-container">
     <form action="{{route('addnews.insert')}}" method="post" class="form" enctype="multipart/form-data">
       @csrf
@@ -48,6 +57,12 @@
       </div>
     </form>
   </div>
+
+  @foreach ($news as $news)
+    <li>{{$news->news_title}} <img src="{{ asset('storage/frontend/src/images/'. $news->news_image) }}" alt=""></li>
+
+  @endforeach
+
 </body>
 
 </html>

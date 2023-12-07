@@ -52,86 +52,25 @@
             <a>Read More >></a>
             <div class="date">11/28/2023</div>
           </article>
+
+          @foreach($news as $news) 
+
           <article>
             <div class="artical-image">
-              <img src="/frontend/src/images/hinata.jpg" alt="Hinata" />
+            <img src="{{ asset('storage/frontend/src/images/'. $news->news_image) }}" alt="">
             </div>
             <div class="news-title">
-              Hinata got married with sakar and going to make baby
+              {{ $news->news_title }}
             </div>
             <div class="news-body hidden">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et fuga
-              asperiores inventore placeat saepe aliquam eligendi optio qui.
-              Vitae dolorum nam minima illo laborum reprehenderit culpa repellat
-              sint quas? Rerum.
+            {{ $news->news_description }}
             </div>
             <a>Read More >></a>
-            <div class="date">11/28/2023</div>
+            <div class="date">{{ $news->news_date }}</div>
           </article>
-          <article>
-            <div class="artical-image">
-              <img src="/frontend/src/images/hinata.jpg" alt="Hinata" />
-            </div>
-            <div class="news-title">
-              Hinata got married with sakar and going to make baby
-            </div>
-            <div class="news-body hidden">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et fuga
-              asperiores inventore placeat saepe aliquam eligendi optio qui.
-              Vitae dolorum nam minima illo laborum reprehenderit culpa repellat
-              sint quas? Rerum.
-            </div>
-            <a>Read More >></a>
-            <div class="date">11/28/2023</div>
-          </article>
-          <article>
-            <div class="artical-image">
-              <img src="/frontend/src/images/hinata.jpg" alt="Hinata" />
-            </div>
-            <div class="news-title">
-              Hinata got married with sakar and going to make baby
-            </div>
-            <div class="news-body hidden">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et fuga
-              asperiores inventore placeat saepe aliquam eligendi optio qui.
-              Vitae dolorum nam minima illo laborum reprehenderit culpa repellat
-              sint quas? Rerum.
-            </div>
-            <a>Read More >></a>
-            <div class="date">11/28/2023</div>
-          </article>
-          <article>
-            <div class="artical-image">
-              <img src="/frontend/src/images/hinata.jpg" alt="Hinata" />
-            </div>
-            <div class="news-title">
-              Hinata got married with sakar and going to make baby
-            </div>
-            <div class="news-body hidden">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et fuga
-              asperiores inventore placeat saepe aliquam eligendi optio qui.
-              Vitae dolorum nam minima illo laborum reprehenderit culpa repellat
-              sint quas? Rerum.
-            </div>
-            <a>Read More >></a>
-            <div class="date">11/28/2023</div>
-          </article>
-          <article>
-            <div class="artical-image">
-              <img src="/frontend/src/images/hinata.jpg" alt="Hinata" />
-            </div>
-            <div class="news-title">
-              Hinata got married with sakar and going to make baby
-            </div>
-            <div class="news-body hidden">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et fuga
-              asperiores inventore placeat saepe aliquam eligendi optio qui.
-              Vitae dolorum nam minima illo laborum reprehenderit culpa repellat
-              sint quas? Rerum.
-            </div>
-            <a>Read More >></a>
-            <div class="date">11/28/2023</div>
-          </article>
+          
+          @endforeach
+
         </div>
         <aside class="featured_news">
           <img src="/frontend/src/images/hinata.jpg" alt="Hinata" />
