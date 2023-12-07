@@ -39,4 +39,8 @@ class NewsController extends Controller
         $news = News::all();
         return view('dashboard.shownews', compact('news'));
     }
+    public function edit(News $news){
+
+        return view('dashboard.editnews', compact('news'));
+    }
 }

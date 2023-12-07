@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Add New Image</title>
-  <link rel="stylesheet" href="../backend/asstes/style.css" />
-  <script src="../backend/asstes/script-js.js"></script>
+  <link rel="stylesheet" href="{{ asset('/backend/asstes/style.css') }}" />
+  <script src="{{ asset('/backend/asstes/script-js.js') }}"></script>
 </head>
 
 <body>
@@ -30,11 +30,22 @@
       @csrf
       @method('post')
       <div class="avatar">
-        <input type="file" id="avatarImageUpload" name="avatarImageUpload" accept="image/*" style="display: none" />
+          <input
+            type="file"
+            id="avatarImageUpload"
+            name="avatarImageUpload"
+            accept="image/*"
+            style="display: none"
+          />
 
-        <img class="upload-img" src="../backend/source/upload-img.png" id="avatarImage" />
-        <label for="avatarImageUpload">Choose Avatar</label>
-      </div>
+          <img
+            class="upload-img"
+            src="../backend/source/images/upload-img.png"
+            id="avatarImage"
+            alt="Upload Image"
+          />
+          <label for="avatarImageUpload">Choose Avatar</label>
+        </div>
       <div class="general-info">
 
         <div class="name-container">

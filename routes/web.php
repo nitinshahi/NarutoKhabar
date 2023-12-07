@@ -21,11 +21,15 @@ Route::get('/', [FrontendController::class, 'index']);
 Route::get('/test', function () {
     return view('konoha.konoha');
 });
+// Route::get('/test2', function () {
+//     return view('dashboard.editnews');
+// });
 
 
 Route::get('/contactus',[ContactusController::class, 'index'])->name('contactus.index');
 Route::post('/',[ContactusController::class, 'insert'])->name('contactus.insert');
 
-Route::get('/addnews', [NewsController::class, 'create']);
+Route::get('/shownews', [NewsController::class, 'index'])->name('editnews.index');
+Route::get('/addnews', [NewsController::class, 'create'])->name('editnews.create');
 Route::post('/addnews', [NewsController::class, 'insert'])->name('addnews.insert');
-Route::get('/shownews', [NewsController::class, 'index']);
+Route::get('/shownews/{news}/editnews',[NewsController::class, 'edit'])->name('editnews.edit');

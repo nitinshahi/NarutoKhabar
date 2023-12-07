@@ -42,7 +42,7 @@
             </a>
           </td>
           <td>
-            <a class="edit-btn" href="./editnews.html">
+            <a class="edit-btn" href="{{ route('editnews.edit', compact('news')) }}">
               edit
               <span>
                 <img
