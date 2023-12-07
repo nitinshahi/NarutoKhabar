@@ -11,10 +11,15 @@
     <h2>Edit News</h2>
     <div class="page-container">
       <form
-        action="your_actual_submit_url"
+        action="{{ Route('addnews.update',compact('news'))}}"
         class="form"
         onsubmit="return validateForm()"
+        method="post"
       >
+
+      @csrf
+      @method('put')
+
         <div class="avatar">
           <input
             type="file"

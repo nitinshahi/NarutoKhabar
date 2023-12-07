@@ -29,7 +29,8 @@ Route::get('/test', function () {
 Route::get('/contactus',[ContactusController::class, 'index'])->name('contactus.index');
 Route::post('/',[ContactusController::class, 'insert'])->name('contactus.insert');
 
-Route::get('/shownews', [NewsController::class, 'index'])->name('editnews.index');
-Route::get('/addnews', [NewsController::class, 'create'])->name('editnews.create');
+Route::get('/shownews', [NewsController::class, 'index'])->name('addnews.index');
+Route::get('/addnews', [NewsController::class, 'create'])->name('addnews.create');
 Route::post('/addnews', [NewsController::class, 'insert'])->name('addnews.insert');
-Route::get('/shownews/{news}/editnews',[NewsController::class, 'edit'])->name('editnews.edit');
+Route::get('/shownews/{news}/editnews',[NewsController::class, 'edit'])->name('addnews.edit');
+Route::put('/shownews/{news}/update',[NewsController::class, 'update'])->name('addnews.update');

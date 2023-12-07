@@ -40,7 +40,10 @@ class NewsController extends Controller
         return view('dashboard.shownews', compact('news'));
     }
     public function edit(News $news){
-
         return view('dashboard.editnews', compact('news'));
+    }
+
+    public function update(News $news,Request $request){
+        echo $news;
     }
 }
