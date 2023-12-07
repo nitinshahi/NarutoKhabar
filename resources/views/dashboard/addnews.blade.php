@@ -58,11 +58,6 @@
     </form>
   </div>
 
-  @foreach ($news as $news)
-    <li>{{$news->news_title}} <img src="{{ asset('storage/frontend/src/images/'. $news->news_image) }}" alt=""></li>
-
-  @endforeach
-
 </body>
 
 </html>

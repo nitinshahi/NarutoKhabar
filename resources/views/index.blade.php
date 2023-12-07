@@ -18,41 +18,7 @@
       <h2>General News</h2>
       <div class="news_wrapper">
         <div class="artical_container">
-          <article>
-            <div class="artical-image">
-              <img src="/frontend/src/images/hinata.jpg" alt="Hinata" />
-            </div>
-            <div class="news-title">
-              Hinata got married with sakar and going to make baby
-            </div>
-            <div class="news-body hidden">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et fuga
-              asperiores inventore placeat saepe aliquam eligendi optio qui.
-              Vitae dolorum nam minima illo laborum reprehenderit culpa repellat
-              sint quas? Rerum.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et fuga
-              asperiores inventore placeat saepe aliquam eligendi optio qui.
-              Vitae dolorum nam minima illo laborum reprehenderit culpa repellat
-              sint quas? Rerum.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et fuga
-              asperiores inventore placeat saepe aliquam eligendi optio qui.
-              Vitae dolorum nam minima illo laborum reprehenderit culpa repellat
-              sint quas? Rerum.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et fuga
-              asperiores inventore placeat saepe aliquam eligendi optio qui.
-              Vitae dolorum nam minima illo laborum reprehenderit culpa repellat
-              sint quas? Rerum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Et fuga
-              asperiores inventore placeat saepe aliquam eligendi optio qui.
-              Vitae dolorum nam minima illo laborum reprehenderit culpa repellat
-              sint quas? Rerum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Et fuga
-              asperiores inventore placeat saepe aliquam eligendi optio qui.
-              Vitae dolorum nam minima illo laborum reprehenderit culpa repellat
-              sint quas? Rerum.
-            </div>
-            <a>Read More >></a>
-            <div class="date">11/28/2023</div>
-          </article>
-
+          
           @foreach($news as $news) 
 
           <article>
