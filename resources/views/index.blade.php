@@ -23,7 +23,7 @@
 
           <article>
             <div class="artical-image">
-            <img src="{{ asset('storage/frontend/src/images/'. $news->news_image) }}" alt="">
+            <img src="{{ asset('storage/uploads/images/'. $news->news_image) }}" alt="">
             </div>
             <div class="news-title">
               {{ $news->news_title }}
