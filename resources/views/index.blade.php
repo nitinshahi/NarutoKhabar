@@ -19,8 +19,8 @@
       <div class="news_wrapper">
         <div class="artical_container">
           
-          @foreach($news as $news) 
-
+          @foreach($news as $index => $news) 
+          @if($index < 6)
           <article>
             <div class="artical-image">
             <img src="{{ asset('storage/uploads/images/'. $news->news_image) }}" alt="">
@@ -34,7 +34,9 @@
             <a>Read More >></a>
             <div class="date">{{ $news->news_date }}</div>
           </article>
-          
+          @else
+            @break
+          @endif
           @endforeach
 
         </div>
