@@ -27,13 +27,15 @@ Route::get('/test', function () {
 // });
 
 Route::get('/login',[AuthController::class, 'index']);
+Route::post('/login',[AuthController::class, 'login'])->name('login');
+Route::get('/logout',[AuthController::class, 'logout'])->name('logout');
 
 Route::get('/contactus',[ContactusController::class, 'index'])->name('contactus.index');
 Route::post('/',[ContactusController::class, 'insert'])->name('contactus.insert');
 
-Route::get('/shownews', [NewsController::class, 'index'])->name('addnews.index');
-Route::get('/addnews', [NewsController::class, 'create'])->name('addnews.create');
-Route::post('/addnews', [NewsController::class, 'insert'])->name('addnews.insert');
-Route::get('/shownews/{news}/editnews',[NewsController::class, 'edit'])->name('addnews.edit');
-Route::put('/shownews/{news}/update',[NewsController::class, 'update'])->name('addnews.update');
+Route::get('/shownews', [NewsController::class, 'index'])->name('addnews.index')->middleware('auth');
+Route::get('/addnews', [NewsController::class, 'create'])->name('addnews.create')->middleware('auth');
+Route::post('/addnews', [NewsController::class, 'insert'])->name('addnews.insert')->middleware('auth');
+Route::get('/shownews/{news}/editnews',[NewsController::class, 'edit'])->name('addnews.edit')->middleware('auth');
+Route::put('/shownews/{news}/update',[NewsController::class, 'update'])->name('addnews.update')->middleware('auth');
 

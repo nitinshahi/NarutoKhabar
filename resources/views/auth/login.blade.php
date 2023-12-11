@@ -12,18 +12,23 @@
           <h2>Naruto Khabar</h2>
         </div>
 
-        <form action="" class="form">
+        <form action="{{route('login')}}" class="form" method="post">
+          @csrf
+          @method('post')
+          
           <input
-            type="text"
-            placeholder="Username"
+            type="email"
+            placeholder="Email@example.com"
             class="text"
             id="username"
+            name="email"
           /><br />
           <input
             type="password"
             placeholder="••••••••••••••"
             class="password"
             id="password"
+            name="password"
           /><br />
           <div class="btns">
             <button class="btn-login" onclick="loginValidation()">Login</button>

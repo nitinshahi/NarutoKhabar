@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Add New Image</title>
-  <link rel="stylesheet" href="{{ asset('/backend/asstes/style.css') }}" />
-  <script src="{{ asset('/backend/asstes/script-js.js') }}"></script>
-</head>
-
-<body>
+@extends('dashboard.layouts.dashboard_content')
+ 
+@section('dashboard-section')
   
   
   <h2>Add News</h2>
@@ -69,6 +60,4 @@
     </form>
   </div>
 
-</body>
-
-</html>
+@endsection

@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All News</title>
-    <link rel="stylesheet" href="../backend/asstes/style.css" />
-  </head>
-  <body>
-    <h2>All News</h2>
+@extends('dashboard.layouts.dashboard_content')
+ 
+@section('dashboard-section')
+<h2>All News</h2>
 
     <div class="all-news-container">
       <div class="add-on-section">
@@ -57,5 +51,5 @@
         
       </table>
     </div>
-  </body>
-</html>
+
+    @endsection
