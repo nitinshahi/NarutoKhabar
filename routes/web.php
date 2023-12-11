@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ContactusController;
 use App\Http\Controllers\FrontendController;
@@ -25,6 +26,7 @@ Route::get('/test', function () {
 //     return view('dashboard.editnews');
 // });
 
+Route::get('/login',[AuthController::class, 'index']);
 
 Route::get('/contactus',[ContactusController::class, 'index'])->name('contactus.index');
 Route::post('/',[ContactusController::class, 'insert'])->name('contactus.insert');
@@ -34,3 +36,4 @@ Route::get('/addnews', [NewsController::class, 'create'])->name('addnews.create'
 Route::post('/addnews', [NewsController::class, 'insert'])->name('addnews.insert');
 Route::get('/shownews/{news}/editnews',[NewsController::class, 'edit'])->name('addnews.edit');
 Route::put('/shownews/{news}/update',[NewsController::class, 'update'])->name('addnews.update');
+
