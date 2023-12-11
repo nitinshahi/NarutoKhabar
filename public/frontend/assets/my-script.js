@@ -151,6 +151,9 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const articles = document.querySelectorAll(".artical_container article");
 
+  console.log("Articles:", articles);
+
+
   // Function to hide the active news body
   function hideActiveNewsBody() {
     articles.forEach((article) => {
@@ -190,4 +193,55 @@ document.addEventListener("DOMContentLoaded", function () {
       hideActiveNewsBody();
     }
   });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const sliderContainer = document.getElementById("slider-container");
+  const dotsContainer = document.getElementById("dots-container");
+
+  const images = document.querySelectorAll("#slider-container img");
+  const totalImages = images.length;
+  let currentIndex = 0;
+
+  function showSlide(index) {
+    if (index < 0) {
+      currentIndex = totalImages - 1;
+    } else if (index >= totalImages) {
+      currentIndex = 0;
+    } else {
+      currentIndex = index;
+    }
+
+    const translationValue = currentIndex * 100; // Change from - to +
+    sliderContainer.style.transform = `translateX(-${translationValue}%)`;
+
+    updateDots();
+  }
+
+  function updateDots() {
+    const dots = document.querySelectorAll(".dot");
+    dots.forEach((dot, index) => {
+      if (index === currentIndex) {
+        dot.classList.add("active");
+      } else {
+        dot.classList.remove("active");
+      }
+    });
+  }
+
+  function createDots() {
+    for (let i = 0; i < totalImages; i++) {
+      const dot = document.createElement("div");
+      dot.classList.add("dot");
+      dot.addEventListener("click", () => showSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+
+    updateDots();
+  }
+
+  createDots();
+
+  // Automatic slide change after a certain interval (e.g., 3 seconds)
+  setInterval(() => showSlide(currentIndex + 1), 3000);
 });

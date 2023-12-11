@@ -1,23 +1,23 @@
 <div id="hamburger">&#9776;</div>
-
     <div id="sidebar">
-      <p> <a href="./maindash.html">Naruto Khabar</a></p>
+      <p><a href="./maindash.html">Naruto Khabar</a></p>
       <div class="child-element" onclick="toggleNestedChildren(this)">
         News
         <div class="nested-child"><a href="./addnews.html">Add News</a></div>
-        <div class="nested-child">Edit News</div>
-        <div class="nested-child">All News</div>
+        <!-- <div class="nested-child"><a href="./editnews.html">Edit News</a></div> -->
+        <div class="nested-child"><a href="./shownews.html">All News</a></div>
       </div>
+      
+
       <div class="child-element" onclick="toggleNestedChildren(this)">
-        Child Element 2
-        <div class="nested-child">Nested Child 1</div>
-        <div class="nested-child">Nested Child 2</div>
+        Author
+        <div class="nested-child"><a href="./addauthor.html">Add Autor</a></div>
+        <!-- <div class="nested-child"><a href="./editnews.html">Edit News</a></div> -->
+        <div class="nested-child"><a href="./allauthor.html">All Authors</a></div>
       </div>
-      <div class="child-element">Child Element 3</div>
+
       <div class="logout-button">
-        <button><a href="{{ route('logout') }}">
-          &#x2699; Logout</button>
-        </a>
+        <button>&#x2699; Logout</button>
       </div>
     </div>
 

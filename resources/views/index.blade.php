@@ -41,7 +41,14 @@
 
         </div>
         <aside class="featured_news">
-          <img src="/frontend/src/images/hinata.jpg" alt="Hinata" />
+          <div class="featured_news-container">
+            <div class="slider" id="slider-container">
+              <img src="./frontend/src/images/hinata.jpg" alt="Hinata" />
+              <img src="./frontend/src/images/pain.jpg" alt="Hinata" />
+              <img src="./frontend/src/images/kakashi.jpg" alt="Hinata" />
+            </div>
+            <div class="dots" id="dots-container"></div>
+          </div>
         </aside>
       </div>
     </div>
