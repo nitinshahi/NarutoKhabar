@@ -245,3 +245,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Automatic slide change after a certain interval (e.g., 3 seconds)
   setInterval(() => showSlide(currentIndex + 1), 3000);
 });
+function deleteNews(e){
+    e.preventDefault();
+    console.log('Helo');
+    alert(e);
+    // document.getElementById('deleteNews').submit();
+    
+
+}

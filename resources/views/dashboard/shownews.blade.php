@@ -6,7 +6,7 @@
     <div class="all-news-container">
       <div class="add-on-section">
         <p>News Details</p>
-        <a class="add-news" href="./addnews.html"
+        <a class="add-news" href="{{ Route('addnews.create') }}"
           ><span
             ><img src="../backend/source/svg/plus-solid.svg" alt=""
           /></span>
@@ -28,12 +28,19 @@
             <td>{{ $news->news_title }}</td>
             <td>{{ $news->news_date }}</td>
             <td>
-            <a class="delete-btn" href="#">
+            <a class="delete-btn" href="#" 
+            onclick="
+            event.preventDefault();
+            document.getElementById('deleteNews{{$news->id}}').submit();">
               delete
               <span>
                 <img src="../backend/source/svg/trash-solid.svg" alt="" />
               </span>
             </a>
+            <form id="deleteNews{{$news->id}}" action="{{ route('addnews.destroy', ['news' => $news]) }}" method="post">
+              @csrf
+              @method('delete')
+            </form>
           </td>
           <td>
             <a class="edit-btn" href="{{ route('addnews.edit', compact('news')) }}">

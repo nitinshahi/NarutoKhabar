@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class NewsController extends Controller
 {
@@ -30,7 +31,7 @@ class NewsController extends Controller
         $news->news_description = $request->newsDiscription;
         $news->save();
         // dd($request->all());
-        return redirect()->back()->with('flash_back',"Added Sucessfully");
+        return redirect()->back()->with('flash_back',"Added Sucessfully!!");
     
     }
 
@@ -45,6 +46,8 @@ class NewsController extends Controller
     public function update(News $news,Request $request){
 
         if($request->hasfile('avatarImageUpload')){
+
+            Storage::delete('/public/uploads/images/'.$news->news_image);
             $imageOriginalName = $request->file('avatarImageUpload')->getClientOriginalName();
             $request->file('avatarImageUpload')->storeAS('public/uploads/images',$imageOriginalName);
 
@@ -59,8 +62,13 @@ class NewsController extends Controller
         else{
             echo 'doesnt have file';
         }
-        
-       
+    }
+
+    public function destroy(News $news, Request $request){
+        // dd($request);
+        Storage::delete('/public/uploads/images/'.$news->news_image);
+        $news->delete();
+        return redirect(route('addnews.index'))->with('flash_back',"Deleted Sucessfully!!");
         
     }
 }

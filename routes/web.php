@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [FrontendController::class, 'index']);
+Route::get('/', [FrontendController::class, 'index'])->name('main.index');
 
 Route::get('/test', function () {
     return view('konoha.konoha');
@@ -38,4 +38,5 @@ Route::get('/addnews', [NewsController::class, 'create'])->name('addnews.create'
 Route::post('/addnews', [NewsController::class, 'insert'])->name('addnews.insert')->middleware('auth');
 Route::get('/shownews/{news}/editnews',[NewsController::class, 'edit'])->name('addnews.edit')->middleware('auth');
 Route::put('/shownews/{news}/update',[NewsController::class, 'update'])->name('addnews.update')->middleware('auth');
+Route::delete('/shownews/{news}/destroy',[NewsController::class, 'destroy'])->name('addnews.destroy')->middleware('auth');
 
