@@ -9,7 +9,7 @@
   </head>
   <body>
 <header class="page-title">
-      <a href="#">
+      <a href="{{ Route('main.index') }}">
         <img src="frontend/src/logo/logo.png" alt="Naruto Khabar" />
         <h1>Naruto Khabar</h1>
       </a>
